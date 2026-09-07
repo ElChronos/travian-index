@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#080b10"/><stop offset=".45" stop-color="#49301d"/><stop offset="1" stop-color="#b27631"/></linearGradient>
+ <radialGradient id="sun"><stop stop-color="#ffd98a" stop-opacity=".95"/><stop offset=".35" stop-color="#d99a3e" stop-opacity=".35"/><stop offset="1" stop-color="#d99a3e" stop-opacity="0"/></radialGradient>
+ <linearGradient id="ground" x2="0" y2="1"><stop stop-color="#4a3a27"/><stop offset="1" stop-color="#0d120e"/></linearGradient>
+ <linearGradient id="fire"><stop stop-color="#ffd36a"/><stop offset="1" stop-color="#8b2414"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="7"/></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<circle cx="1170" cy="275" r="250" fill="url(#sun)" filter="url(#soft)"/>
+<path d="M0 460L190 330 360 445 535 295 760 450 950 320 1160 445 1370 300 1600 430V610H0Z" fill="#12191b" opacity=".85"/>
+<path d="M0 535L260 410 450 530 670 390 900 535 1120 405 1320 520 1600 370V650H0Z" fill="#1b241d"/>
+<path d="M0 570 Q300 500 610 585 T1210 560 T1600 500 V900 H0Z" fill="url(#ground)"/>
+<path d="M650 900 Q780 730 920 610 Q1030 515 1180 470 Q1050 560 1030 690 Q1000 805 1110 900Z" fill="#6a4d2b" opacity=".75"/>
+<path d="M780 900 Q850 760 960 655 Q1070 555 1190 490" fill="none" stroke="#b8874a" stroke-width="30" opacity=".28"/>
+<!-- distant fortress -->
+<g transform="translate(1040 360)" fill="#1a1713" stroke="#070706" stroke-width="7">
+ <path d="M0 210L35 115H330L365 210Z" fill="#241e18"/>
+ <rect x="48" y="92" width="55" height="118"/><rect x="270" y="78" width="55" height="132"/>
+ <path d="M42 92L75 55L108 92Z"/><path d="M264 78L297 38L330 78Z"/>
+ <rect x="128" y="132" width="145" height="78" fill="#2c251e"/>
+ <path d="M185 210V165Q200 135 215 165V210Z" fill="#080706"/>
+ <g stroke="#9f7133" stroke-width="4"><path d="M10 142h30M115 142h145M335 142h22"/><path d="M18 178h22M112 178h150M340 178h18"/></g>
+</g>
+<!-- village -->
+<g fill="#30251a" stroke="#17120e" stroke-width="5">
+ <path d="M870 560l55-65 55 65v70H870Z"/><path d="M1010 595l45-55 45 55v55h-90Z"/><path d="M1150 565l55-72 55 72v80h-110Z"/><path d="M1260 620l42-52 42 52v55h-84Z"/>
+</g>
+<g fill="#7d4424"><path d="M850 560l75-88 75 88Z"/><path d="M990 595l65-72 65 72Z"/><path d="M1130 565l75-95 75 95Z"/><path d="M1245 620l57-70 57 70Z"/></g>
+<!-- smoke -->
+<g fill="#1d1a17" opacity=".42" filter="url(#soft)"><ellipse cx="1210" cy="425" rx="35" ry="65"/><ellipse cx="1240" cy="375" rx="48" ry="80"/><ellipse cx="1270" cy="320" rx="42" ry="65"/></g>
+<!-- armies -->
+<g fill="#151515" stroke="#080808" stroke-width="3">
+ <g transform="translate(300 610)"><circle cx="0" cy="0" r="14"/><path d="M-15 18h30l18 70h-66Z"/><path d="M-30 38L-62 5M30 38L62 5"/><path d="M-10 88l-25 55M10 88l25 55"/><path d="M62 5V-70" stroke="#777"/><path d="M62-70l48 25-48 24Z" fill="#741e22"/></g>
+ <g transform="translate(390 650) scale(.8)"><circle r="14"/><path d="M-15 18h30l18 70h-66Z"/><path d="M-30 38L-62 5M30 38L62 5"/><path d="M-10 88l-25 55M10 88l25 55"/></g>
+ <g transform="translate(480 625) scale(.75)"><circle r="14"/><path d="M-15 18h30l18 70h-66Z"/><path d="M-30 38L-62 5M30 38L62 5"/><path d="M-10 88l-25 55M10 88l25 55"/></g>
+</g>
+<!-- cavalry silhouettes -->
+<g fill="#10100e" stroke="#050505" stroke-width="5">
+ <path d="M610 690q35-45 80 0l-15 20H625Z"/><circle cx="625" cy="670" r="12"/><path d="M660 655l15-42"/><path d="M675 613l45 25"/>
+ <path d="M710 725q35-45 80 0l-15 20H725Z"/><circle cx="725" cy="705" r="12"/><path d="M760 690l15-42"/><path d="M775 648l45 25"/>
+</g>
+<!-- foreground commander -->
+<g transform="translate(1370 570)" fill="#11110f" stroke="#050505" stroke-width="7">
+ <ellipse cx="80" cy="190" rx="150" ry="42"/>
+ <path d="M35 160Q50 60 105 10Q160 60 185 160Z"/>
+ <circle cx="105" cy="15" r="24"/>
+ <path d="M125 55L155 25 185 60"/>
+ <path d="M30 95L-70 5"/><path d="M-70 5V-150" stroke="#7c6039" stroke-width="8"/>
+ <path d="M-68-150Q5-125 45-75L-68-35Z" fill="#7b1e25" stroke="#a04a36"/>
+ <path d="M105 185V280M65 185v95M145 185v95"/>
+</g>
+<!-- foreground banners -->
+<g stroke="#7d6238" stroke-width="7"><path d="M95 900V500"/><path d="M1510 900V430"/></g>
+<path d="M95 510q90 25 150 80v105q-70-55-150-65Z" fill="#701c25" stroke="#321016" stroke-width="5"/>
+<path d="M1510 440q-80 20-145 75v120q70-55 145-60Z" fill="#701c25" stroke="#321016" stroke-width="5"/>
+<!-- atmospheric vignette -->
+<rect width="1600" height="900" fill="none" stroke="#000" stroke-width="160" opacity=".5"/>
+<rect width="1600" height="900" fill="url(#sky)" opacity=".08"/>
+</svg>
