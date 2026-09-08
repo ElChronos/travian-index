@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f1eee7">
+<meta name="theme-color" content="#12110f">
 <title>Crusader Trav — Forge Your Legacy</title>
 <meta name="description" content="Crusader Trav — classic T3.6-inspired strategy at high speed.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,17 +20,16 @@
 
 <main id="top">
 <section class="hero">
+  <div class="hero-photo" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-copy">
     <p class="eyebrow">CRUSADER TRAV · CLASSIC T3.6 · HIGH SPEED</p>
     <h1>Welcome to<br><em>Crusader Trav.</em></h1>
     <p class="hero-text">A classic strategy world rebuilt for players who want the village, the rivalry and the war — without the waiting.</p>
-    <div class="hero-actions"><a class="button dark" href="#join">Join the adventure <span>↗</span></a><a class="text-link" href="#world">Explore the world <span>↓</span></a></div>
+    <div class="hero-actions"><a class="button gold" href="#join">Join the adventure <span>↗</span></a><a class="text-link light" href="#world">Explore the world <span>↓</span></a></div>
+    <div class="hero-status"><span class="status-dot"></span><span>SERVER ONLINE</span><i></i><span>SEASON I</span></div>
   </div>
-  <div class="hero-art-wrap">
-    <div class="hero-art-glow"></div>
-    <img class="hero-art" src="battlefield.svg" alt="Illustrated medieval battlefield">
-    <div class="art-caption"><span>SEASON I</span><span>100× MAP</span><span>HIGH SPEED</span></div>
-  </div>
+  <div class="hero-meta"><span>TRAVIAN VILLAGE</span><span>100× MAP</span><span>30× TROOP SPEED</span><span>T3.6 INSPIRED</span></div>
 </section>
 
 <section class="statement" id="world">
@@ -40,22 +39,22 @@
 </section>
 
 <section class="world-panel">
-  <div class="world-image"><img src="battlefield.svg" alt="Crusader Trav medieval realm illustration"></div>
-  <div class="world-copy"><span class="number">01</span><h3>The classic feeling,<br><em>at a faster pace.</em></h3><p>Crusader Trav keeps the familiar three-tribe strategy loop and gives every decision more momentum. Construction, expansion and war happen sooner, so the map becomes alive early.</p><a class="text-link" href="#season">Discover the season <span>→</span></a></div>
+  <div class="world-image"><img src="https://cdn.mobygames.com/promos/253132-travian-screenshot-village-centre-your-village-could-like-this-o.jpg" alt="Travian village centre screenshot"></div>
+  <div class="world-copy"><span class="number">01</span><h3>The classic feeling,<br><em>at a faster pace.</em></h3><p>Crusader Trav keeps the familiar village-building strategy loop and gives every decision more momentum. Construction, expansion and war happen sooner, so the map becomes alive early.</p><a class="text-link" href="#season">Discover the season <span>→</span></a></div>
 </section>
 
 <section class="tribes" id="tribes">
   <div class="tribes-head"><div><span class="section-kicker">CHOOSE YOUR PATH</span><h2>Three tribes.<br><em>Endless stories.</em></h2></div><p>Roman, Teuton or Gaul. Pick the identity that fits the way you want to rule the map.</p></div>
   <div class="tribe-row">
-    <article><span>01</span><div class="tribe-icon">♜</div><h3>Roman</h3><p>Order, economy and a powerful late game.</p></article>
-    <article><span>02</span><div class="tribe-icon">⚔</div><h3>Teuton</h3><p>Pressure, raiding and relentless aggression.</p></article>
-    <article><span>03</span><div class="tribe-icon">✦</div><h3>Gaul</h3><p>Speed, defense and adaptable strategy.</p></article>
+    <article><span>01</span><div class="tribe-icon roman">♜</div><h3>Roman</h3><p>Order, economy and a powerful late game.</p></article>
+    <article><span>02</span><div class="tribe-icon teuton">⚔</div><h3>Teuton</h3><p>Pressure, raiding and relentless aggression.</p></article>
+    <article><span>03</span><div class="tribe-icon gaul">✦</div><h3>Gaul</h3><p>Speed, defense and adaptable strategy.</p></article>
   </div>
 </section>
 
 <section class="season" id="season">
-  <div class="season-copy"><span class="section-kicker">THE SERVER</span><h2>Less waiting.<br><em>More playing.</em></h2><p>High-speed progression, faster armies and an active map from the opening hours. The classic rhythm is still here — the downtime is not.</p><div class="stats"><div><b>x100</b><span>Game speed</span></div><div><b>x30</b><span>Troop speed</span></div><div><b>LIVE</b><span>Season status</span></div></div><a class="button dark" href="#join">Enter the world <span>↗</span></a></div>
-  <div class="season-art"><img src="battlefield.svg" alt="Crusader Trav season artwork"><div class="season-label">THE REALM IS LIVE</div></div>
+  <div class="season-copy"><span class="section-kicker">THE SERVER</span><h2>Less waiting.<br><em>More playing.</em></h2><p>High-speed progression, faster armies and an active map from the opening hours. The classic rhythm is still here — the downtime is not.</p><div class="stats"><div><b>x100</b><span>Game speed</span></div><div><b>x30</b><span>Troop speed</span></div><div><b>LIVE</b><span>Season status</span></div></div><a class="button gold" href="#join">Enter the world <span>↗</span></a></div>
+  <div class="season-art"><img src="https://cdn.mobygames.com/promos/256122-travian-screenshot-village-overview-lumber-clay-iron-and-crop-ar.jpg" alt="Travian village overview screenshot"><div class="season-label">TRAVIAN VILLAGE OVERVIEW</div></div>
 </section>
 
 <section class="community" id="community">
@@ -67,10 +66,10 @@
 
 <section class="join" id="join">
   <div class="join-copy"><span class="section-kicker">BEGIN YOUR LEGACY</span><h2>Join the<br><em>adventure.</em></h2><p>Create your commander and take your place on the map.</p></div>
-  <form id="register" onsubmit="event.preventDefault()"><label>Username<input name="username" placeholder="Commander name" autocomplete="username"></label><label>Email<input name="email" type="email" placeholder="you@example.com" autocomplete="email"></label><label>Password<input name="password" type="password" placeholder="Create a password" autocomplete="new-password"></label><button class="button dark" type="submit">Create account <span>↗</span></button><small>Registration is frontend-only for now.</small></form>
+  <form id="register" onsubmit="event.preventDefault()"><label>Username<input name="username" placeholder="Commander name" autocomplete="username"></label><label>Email<input name="email" type="email" placeholder="you@example.com" autocomplete="email"></label><label>Password<input name="password" type="password" placeholder="Create a password" autocomplete="new-password"></label><button class="button gold" type="submit">Create account <span>↗</span></button><small>Registration is frontend-only for now.</small></form>
 </section>
 
-<section class="login" id="login"><div><span class="section-kicker">WELCOME BACK</span><h2>Return to<br><em>your village.</em></h2></div><form onsubmit="event.preventDefault()"><label>Username<input placeholder="Commander name"></label><label>Password<input type="password" placeholder="Password"></label><button class="button dark" type="submit">Log in <span>→</span></button></form></section>
+<section class="login" id="login"><div><span class="section-kicker">WELCOME BACK</span><h2>Return to<br><em>your village.</em></h2></div><form onsubmit="event.preventDefault()"><label>Username<input placeholder="Commander name"></label><label>Password<input type="password" placeholder="Password"></label><button class="button gold" type="submit">Log in <span>→</span></button></form></section>
 </main>
 
 <footer><a class="brand" href="#top"><span class="brand-mark">✦</span><span><b>CRUSADER</b><small>TRAV</small></span></a><p>Classic strategy. Faster.</p><div><a href="#">Rules</a><a href="#">Privacy</a><a href="#">Discord</a></div><small>© 2026 Crusader Trav</small></footer>
