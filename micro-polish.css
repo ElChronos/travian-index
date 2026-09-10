@@ -1,0 +1,19 @@
+/* Final micro-details: hierarchy, texture, focus and quiet interaction polish. */
+::selection{background:#8f6936;color:#fff8eb}
+html{scrollbar-color:#6f4a28 #d8c6a4;scrollbar-width:thin}
+.site-header nav a.active{color:#efcf8d!important}
+.site-header nav a.active:after{transform:scaleX(1)!important;transform-origin:left!important}
+.site-header nav a:focus-visible,.login-link:focus-visible,.header-play:focus-visible{outline:2px solid #e3bd70;outline-offset:5px}
+.button:focus-visible{outline:2px solid #f0ce83!important;outline-offset:4px}
+.game-frame{transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease}
+.feature-grid>div,.tribe-row article{isolation:isolate}
+.feature-grid>div:before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:#9a6c36;transform:scaleY(0);transform-origin:bottom;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.feature-grid>div:hover:before{transform:scaleY(1);transform-origin:top}
+.tribe-row article:after{content:'';position:absolute;inset:8px;border:1px solid rgba(143,101,48,.14);pointer-events:none}
+.tribe-row article:nth-child(2):after{border-color:rgba(239,201,121,.16)}
+.hero-copy .realm-badge span:first-child{color:#b3ca83}
+.hero-status b{color:#d7c39e}
+.hero-meta span{transition:color .2s ease,background .2s ease}
+.hero-meta span:hover{color:#f0ce83;background:rgba(240,206,131,.06)}
+input::placeholder{color:#817360;opacity:.72}
+@media(max-width:560px){.feature-grid>div:before,.tribe-row article:after{display:none}}
