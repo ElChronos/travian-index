@@ -1,47 +1,68 @@
-const header=document.querySelector('.site-header');
+const header = document.querySelector('.site-header');
+const cursor = document.createElement('div');
+const cursorRing = document.createElement('div');
+cursor.className = 'cursor-dot';
+cursorRing.className = 'cursor-ring';
+document.body.append(cursor, cursorRing);
 
-window.addEventListener('scroll',()=>{
-  header?.classList.toggle('scrolled',window.scrollY>24);
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+let ringX = mouseX;
+let ringY = mouseY;
+
+window.addEventListener('pointermove', (event) => {
+  mouseX = event.clientX;
+  mouseY = event.clientY;
+  cursor.style.transform = `translate3d(${mouseX}px,${mouseY}px,0)`;
 });
 
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
-  const id=a.getAttribute('href');
-  if(id&&id.length>1){
-    const el=document.querySelector(id);
-    if(el){
-      e.preventDefault();
-      el.scrollIntoView({behavior:'smooth',block:'start'});
-    }
-  }
-}));
+const animateCursor = () => {
+  ringX += (mouseX - ringX) * 0.16;
+  ringY += (mouseY - ringY) * 0.16;
+  cursorRing.style.transform = `translate3d(${ringX}px,${ringY}px,0)`;
+  requestAnimationFrame(animateCursor);
+};
+animateCursor();
 
-const revealTargets=document.querySelectorAll('.statement,.world-panel,.tribes-head,.community,.join,.login');
-revealTargets.forEach(el=>el.classList.add('reveal'));
+window.addEventListener('scroll', () => {
+  header?.classList.toggle('scrolled', window.scrollY > 24);
 
-document.querySelectorAll('.tribe-row,.stats').forEach(el=>el.classList.add('stagger'));
+  document.querySelectorAll('[data-parallax]').forEach((el) => {
+    const speed = Number(el.dataset.parallax) || 0.08;
+    const rect = el.getBoundingClientRect();
+    const offset = (window.innerHeight / 2 - (rect.top + rect.height / 2)) * speed;
+    el.style.setProperty('--parallax-y', `${offset}px`);
+  });
+});
 
-document.querySelectorAll('.world-copy,.season-copy,.join-copy').forEach(el=>el.classList.add('reveal'));
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', (event) => {
+    const id = anchor.getAttribute('href');
+    if (!id || id === '#') return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
 
-const revealObserver=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
+const revealItems = document.querySelectorAll('.statement, .world-panel, .tribes-head, .tribe-row article, .season-copy, .season-art, .community, .join-copy, .join form, .login > div, .login form');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
       entry.target.classList.add('is-visible');
       revealObserver.unobserve(entry.target);
     }
   });
-},{threshold:.14,rootMargin:'0px 0px -40px'});
-
-document.querySelectorAll('.reveal,.stagger').forEach(el=>revealObserver.observe(el));
-
-const hero=document.querySelector('.hero');
-const heroArt=document.querySelector('.hero-art');
-window.addEventListener('scroll',()=>{
-  if(!hero||!heroArt||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  const y=Math.min(window.scrollY,700);
-  heroArt.style.transform=`translateY(${y*0.035}px) scale(1.01)`;
-},{passive:true});
-
-document.querySelectorAll('input').forEach(input=>{
-  input.addEventListener('focus',()=>input.parentElement?.classList.add('focused'));
-  input.addEventListener('blur',()=>input.parentElement?.classList.remove('focused'));
+}, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+revealItems.forEach((el, index) => {
+  el.style.setProperty('--reveal-delay', `${Math.min(index * 45, 280)}ms`);
+  revealObserver.observe(el);
 });
+
+document.querySelectorAll('a, button, input, .tribe-row article, .header-play').forEach((el) => {
+  el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+  el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+});
+
+window.dispatchEvent(new Event('scroll'));
