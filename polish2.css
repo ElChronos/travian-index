@@ -1,0 +1,61 @@
+/* Final refinement layer: quieter chrome, stronger hierarchy, richer game details. */
+
+.topbar.scrolled{background:rgba(22,11,6,.985);box-shadow:0 15px 34px rgba(10,4,1,.34)}
+.main-nav a.is-active{color:#f1cf86}
+.main-nav a.is-active::before{content:'';position:absolute;left:-8px;top:50%;width:3px;height:3px;transform:translateY(-50%);background:#d9ad61;box-shadow:0 0 8px rgba(217,173,97,.55)}
+
+.hero-content{isolation:isolate}
+.hero-content::after{content:'';position:absolute;right:-1px;bottom:-1px;width:46px;height:46px;border-right:2px solid var(--gold-hi);border-bottom:2px solid var(--gold-hi);opacity:.75;pointer-events:none}
+.hero-content .eyebrow{position:relative;padding-left:34px}
+.hero-content .eyebrow::before{content:'';position:absolute;left:0;top:50%;width:24px;height:1px;background:var(--gold-hi);opacity:.75}
+.hero-bottom div{position:relative;overflow:hidden}
+.hero-bottom div::after{content:'';position:absolute;left:24px;right:24px;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:translateX(-110%);transition:transform .45s ease}
+.hero-bottom div:hover::after{transform:translateX(110%)}
+
+.realm-section,.tribes-section,.register-section{background-image:radial-gradient(circle at 9% 15%,rgba(255,255,255,.34),transparent 28%),radial-gradient(circle at 85% 78%,rgba(95,53,19,.08),transparent 32%)}
+.realm-section::before,.tribes-section::before,.register-section::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.14;background:repeating-linear-gradient(0deg,transparent 0 7px,rgba(90,54,24,.18) 8px,transparent 9px)}
+
+.section-heading,.realm-layout,.tribe-board,.register-copy,.register-box{position:relative;z-index:1}
+.section-heading h2::after,.systems-heading h2::after{content:'';display:block;width:54px;height:2px;margin-top:22px;background:linear-gradient(90deg,var(--gold),transparent)}
+.section-heading.split h2::after{width:44px}
+
+.realm-card{transition:transform .4s cubic-bezier(.2,.75,.2,1),box-shadow .4s ease}
+.realm-card:hover{transform:translateY(-5px) rotateX(.6deg);box-shadow:0 24px 50px rgba(56,28,9,.28)}
+.fake-game-scene::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 45%,transparent 0 34%,rgba(15,8,3,.15) 75%,rgba(10,5,2,.34) 100%)}
+.resource-bar span{position:relative}
+.resource-bar span::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;margin:0 6px 1px 0;background:#c9954a;box-shadow:0 0 8px rgba(201,149,74,.35)}
+
+.tribe-card{transform-style:preserve-3d}
+.tribe-card::before{content:'';position:absolute;inset:8px;border:1px solid rgba(122,87,48,.15);pointer-events:none}
+.tribe-card.active::before{border-color:rgba(239,200,117,.16)}
+.tribe-symbol{line-height:1}
+.tribe-card p{max-width:330px}
+.tribe-card>a{transition:color .2s ease,transform .2s ease}
+.tribe-card>a:hover{transform:translateX(4px)}
+
+.server-section{box-shadow:inset 0 1px rgba(225,179,96,.14),inset 0 -1px rgba(0,0,0,.35)}
+.server-copy{padding:34px;border-left:1px solid rgba(223,182,103,.3);background:linear-gradient(90deg,rgba(20,10,5,.78),rgba(20,10,5,.12));max-width:720px}
+.server-copy .section-heading-title{margin:16px 0 18px;font:700 clamp(46px,6vw,82px)/.9 'Cinzel',serif;letter-spacing:-.035em;color:#f3e7d5;text-shadow:0 2px 0 rgba(0,0,0,.35)}
+.server-copy .section-heading-title em{font-style:normal;color:var(--gold-hi)}
+.server-stats b{letter-spacing:-.02em}
+
+.systems-section{position:relative;overflow:hidden}
+.systems-section::before{content:'CRUSADER TRAV';position:absolute;right:-80px;top:70px;font:800 120px/1 'Cinzel',serif;color:rgba(232,190,111,.035);letter-spacing:.02em;transform:rotate(-90deg);pointer-events:none}
+.system-grid article{position:relative;transition:background .25s ease,transform .25s ease}
+.system-grid article::after{content:'';position:absolute;right:26px;top:26px;width:7px;height:7px;border:1px solid rgba(224,183,102,.42);transform:rotate(45deg);opacity:.5}
+.system-grid article:hover{transform:translateY(-3px);background:linear-gradient(120deg,rgba(242,204,130,.045),transparent)}
+
+.community-section{position:relative;overflow:hidden}
+.community-section::before,.community-section::after{content:'';position:absolute;pointer-events:none;border:1px solid rgba(89,58,28,.18);border-radius:50%}
+.community-section::before{width:520px;height:520px;right:-260px;top:-140px}.community-section::after{width:340px;height:340px;left:-190px;bottom:-170px}
+.community-inner{position:relative;z-index:1}
+
+.game-btn{cursor:pointer}.game-btn:focus-visible,.top-cta:focus-visible,.main-nav a:focus-visible,.plain-link:focus-visible,input:focus-visible{outline:2px solid var(--gold-hi);outline-offset:4px}
+
+@media(max-width:640px){
+  .server-copy{padding:22px 20px;border-left:0;background:linear-gradient(90deg,rgba(20,10,5,.82),rgba(20,10,5,.18))}
+  .hero-content .eyebrow{padding-left:26px}.hero-content .eyebrow::before{width:18px}
+  .systems-section::before{font-size:74px;right:-65px;top:120px}
+}
+
+@media(prefers-reduced-motion:reduce){.realm-card:hover,.tribe-card:hover,.system-grid article:hover{transform:none}}
